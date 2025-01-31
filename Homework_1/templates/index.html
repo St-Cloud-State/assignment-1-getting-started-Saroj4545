@@ -1,0 +1,48 @@
+<html>
+    <head>
+        <title>Acme Financial Corp</title>
+    </head>
+    <body>
+        <h1>Welcome to Acme Financial Corp</h1>
+        <div id="intakeForm">
+            <h2> Loan Application </h2>
+            <label for="name">Applicant Name: </label>
+            <input  type="text" id="name" placeholder="Please enter your name">
+            <br> <br>
+            <label for="zipcode">ZipCode: </label>
+            <input  type="number" id="zipcode" placeholder="Please enter your zipcode">
+            <br> <br>
+            <button onClick="submitApplication()">Submit</button>
+            <p id="applicationResponse"/>
+        </div>
+
+        <div id="checkStatus">
+            <h2> Check Application Status </h2>
+            <label for="statusAppId">Application Number: </label>
+            <input  type="number" id="statusAppId" >
+            <br> <br>
+            <button onClick="checkStatus()">Check Status</button>
+            <p id="statusResponse" style="font-weight: bold;"/>
+        </div>
+
+        <div id="changeStatus">
+            <h2> Update Application Status</h2>
+            <label for="updateAppId">Application Number:</label>
+            <input type="number" id="updateAppId" required>
+            <br> <br>
+            <label for="newStatus">Update Application Status:</label>
+            <select id="newStatus">
+                <option value="" selected disabled>Select a status</option>
+                <option value="received">Received</option>
+                <option value="processing">Processing</option>
+                <option value="accepted">Accepted</option>
+                <option value="rejected">Rejected</option>
+            </select>
+            <br> <br>
+            <button onClick="updateStatus()">Update Application Status</button>
+            <p id="updateResponse"></p>
+        </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+    </body>
+</html>
