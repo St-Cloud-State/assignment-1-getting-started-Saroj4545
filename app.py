@@ -3,9 +3,6 @@ from flask import Flask, jsonify, render_template, request
 app = Flask(__name__)
 books = ["book1"]; 
 
-
-
-
 @app.route('/api/books', methods=['GET'])
 def get_all_books_v2():
     return jsonify({'list of books':books})
@@ -26,4 +23,4 @@ def index():
     return render_template('index.html')
     
 if __name__ == '__main__':
-    app.run(debug=True, host="0.0.0.0")
+    app.run(debug=True, host="0.0.0.0",port=5000)
